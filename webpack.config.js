@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ENV = process.env.npm_lifecycle_event === 'build'  
 
 
@@ -15,7 +16,8 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports ={
     // context: '__dirname',
     entry: {
-        app: path.join(__dirname, 'client', 'index'),
+        app: path.join(__dirname, 'client', 'Router'),
+        style: path.join(__dirname, 'client','styles', 'global.styl'),
     },
     devtool: ENV ? false : 'eval-source-map',
     output: {
@@ -37,9 +39,14 @@ module.exports ={
     module: {
         loaders: [
             {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
-            },
+				test: /\.css$/,
+				loader: 'style-loader!css-loader!stylus-loader'
+			},
+            {
+				test: /\.styl$/,
+                exculde: /node_modules/,
+				loader: 'style-loader!css-loader!stylus-loader'
+			},
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -52,6 +59,7 @@ module.exports ={
         new CleanWebpackPlugin([path.join(__dirname, 'dist')], {
             root: process.cwd()
         }),
+    //   new ExtractTextPlugin('styles.[chunkhash].css'),
         HTMLWebpackPluginConfig,
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
