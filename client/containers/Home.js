@@ -9,9 +9,8 @@ import Contact from '../components/Contact'
 export default class Home extends Component {
   render() {
     return ( <div>
-              <h1>HOME</h1>
-              <Splash />
-              <About />
+              <Splash height={this.props.height} />
+              <About height={this.props.height} />
               <CreditShowcase />
               <Contact />
             </div>       

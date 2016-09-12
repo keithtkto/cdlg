@@ -8,10 +8,10 @@ import {credits} from '../helpers/credits'
 
 export default class CreditShowcase extends Component {
   render() {
-    return ( <div>
+    return ( <div style={{position: 'relative'}}>
                 {credits.map((credit, i)=> {
                     return ( <div key={i}>
-                                <CreditCard credit={credit} />
+                                <CreditCard order={i} credit={credit} />
                              </div>)
                 })}
             </div>       
