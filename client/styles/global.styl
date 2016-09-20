@@ -31,21 +31,40 @@ ul
 	text-transform: uppercase
 	text-align: center
 	position: relative
-	div
-		left: 50%
-		top: 50%
-		transform: translate(-50%, -50%)
-		position: absolute
-		vertical-align: super
-		width: 400px
-		padding: 25px
-		border: 15px solid rgba(255, 255, 255, 1)
-		h1
-			font-size: 90px
-			position: relative
-			top: 10px
-			line-height: 0.6
-			font-weight: bolder
+
+.splash-header-box
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+	position: absolute
+	vertical-align: super
+	width: 400px
+	padding: 25px
+	border: 15px solid rgba(255, 255, 255, 1)
+	h1
+		font-size: 90px
+		position: relative
+		top: 10px
+		line-height: 0.6
+		font-weight: bolder
+
+.splash-fullname
+	width: 80%
+	left: 50%
+	top: -5%
+	position: fixed
+	text-transform: uppercase
+	font-size: 40px
+	letter-spacing: 10px
+	transform: translate(-50%, -50%)
+	transition: top 1s 
+
+.splash-fullname-show
+	top: 5%
+.splash-fullname-hide
+	top: -5%
+
+
 
 .about-container
 	height: 350px
