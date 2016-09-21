@@ -13,7 +13,7 @@ export default class App extends Component {
 
   
   render() {
-    return ( <div>
+    return ( <div style={{width: 1200, margin: '0 auto'}}>
               <Nav height={this.state.height} /> 
               <div style={{margin: '0 75px'}}>
                 {React.cloneElement(this.props.children, { height: this.state.height })}
