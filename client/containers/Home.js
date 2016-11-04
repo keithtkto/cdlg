@@ -11,9 +11,9 @@ export default class Home extends Component {
     return ( <div>
               <Splash height={this.props.height} />
               <About height={this.props.height} />
-              <CreditShowcase />
-              <Contact />
             </div>       
     );
   }
 }
+              // <CreditShowcase />
+              // <Contact />

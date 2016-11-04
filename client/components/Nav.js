@@ -6,8 +6,11 @@ export default class App extends Component {
     return ( <div className='nav-container'>
               <ul>
                 <li>Home</li>
-                <li>About Me</li>
+                <li>&middot;</li>
+                <li>About</li>
+                <li>&middot;</li>
                 <li>Portfolio</li>
+                <li>&middot;</li>
                 <li>Contact</li>
               </ul>
             </div>       
