@@ -9,9 +9,10 @@ export default class CreditThumbnail extends Component {
               <span>{credit.band}</span> 
               <span>{credit.album}</span> 
               <span>{credit.label}</span> 
-              <span>{credit.year}</span> 
               <span>{credit.role}</span> 
             </div>       
     );
   }
 }
+
+              // <span>{credit.year}</span> 

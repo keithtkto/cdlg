@@ -5,13 +5,23 @@ export default class App extends Component {
   render() {
     return ( <div className='nav-container'>
               <ul>
-                <li>Home</li>
                 <li>&middot;</li>
-                <li>About</li>
+                <li>
+                  <a href="" className='underline-animation'>Home</a>
+                </li>
                 <li>&middot;</li>
-                <li>Portfolio</li>
+                <li>
+                  <a href="" className='underline-animation'>About</a>
+                </li>
                 <li>&middot;</li>
-                <li>Contact</li>
+                <li>
+                  <a href="" className='underline-animation'>Work</a>
+                </li>
+                <li>&middot;</li>
+                <li>
+                  <a href="" className='underline-animation'>Contact</a>
+                </li>
+                <li>&middot;</li>
               </ul>
             </div>       
     );

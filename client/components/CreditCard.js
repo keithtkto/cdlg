@@ -4,19 +4,27 @@ export default class CreditCard extends Component {
 
   render() {
     const credit = this.props.credit
-    return ( <div className={'card ' +'card-'+(this.props.order % 3)}>
-              <div className='card-album-cover'></div>
-              <div className='card-album-credits'>
-                <span>{credit.band}</span> 
-                <span>{credit.album}</span> 
-                <span>{credit.label}</span> 
-                <span>{credit.year}</span> 
-                <span>{credit.role}</span> 
-              </div>
-            </div>       
-    );
+			return (<div className='flip-container'>
+								<div className='flipper'>
+									<div className='front card-album-cover'>
+									</div>
+									<div className='back' style={{background: '#ccc'}}>
+										<div className='card-album-credits'>
+											<span style={{fontSize: 21}}>{credit.band}</span> 
+											<span style={{fontSize: 17}}>{credit.album}</span> 
+											<span style={{fontWeight: 200, flexGrow: 2}}>{credit.label}</span> 
+											<span style={{fontSize: 21}}>{credit.role}</span> 
+										</div>
+									</div>
+								</div>
+							</div>)
   }
 }
+
+
+
+
+                // <span>{credit.year}</span> 
 	// 	return (
   //     <div style={{
 	// 			height: 1000,

@@ -7,13 +7,34 @@ import CreditShowcase from '../components/CreditShowcase'
 import Contact from '../components/Contact'
 
 export default class Home extends Component {
+  constructor(){
+    super()
+
+    this.state ={
+      overlayCss: 'translateY(0)',
+
+    }
+  }
+
+
+  componentDidMount(){
+    setTimeout(()=>{
+      this.setState({overlayCss: 'translateY(-100%)' })
+      setTimeout(()=>{
+        
+      })
+    }, 1000)
+  }
+
+
   render() {
     return ( <div>
-              <Splash height={this.props.height} />
-              <About height={this.props.height} />
+              <div className='overlay' style={{transform: this.state.overlayCss}}></div>
+              <Splash />
+              <About />
+              <CreditShowcase />
+              <Contact />
             </div>       
     );
   }
 }
-              // <CreditShowcase />
-              // <Contact />

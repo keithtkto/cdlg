@@ -14,9 +14,7 @@ export default class App extends Component {
   
   render() {
     return ( <div style={{maxWidth: 1200, width: '100%', margin: '0 auto'}}>
-              <div>
-                {React.cloneElement(this.props.children, { height: this.state.height })}
-              </div>
+              {React.cloneElement(this.props.children)}
             </div>       
     );
   }

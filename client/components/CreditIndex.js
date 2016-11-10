@@ -7,6 +7,9 @@ import {credits} from '../helpers/credits'
 
 
 export default class Home extends Component {
+
+
+
   render() {
     return ( <div>
                 {credits.map((credit, i)=> {

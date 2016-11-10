@@ -1,9 +1,10 @@
 body
-	background: #cccccc
+	background: white
 	color: black  
 	// font-family: 'Open Sans', sans-serif
-	font-family: 'Josefin Sans', sans-serif;
-	// font-family: 'Didact Gothic', sans-serif;
+	// font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Oswald', sans-serif;
+
 ul
 	list-style: none
 
@@ -19,9 +20,22 @@ ul
 // 	font-size: 30px
 
 p
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
+	// font-family: 'Didact Gothic', sans-serif;
+	// font-family: 'Roboto', sans-serif;
 
-	
+.overlay	
+	position: fixed
+	left: 0
+	width: 100%
+	height: 100%
+	background: #191919
+	z-index: 10
+	// transition: translateY(0)
+	transition: transform 0.8s
+
+.container
+	height: 100%	
 
 .nav-container
 	position: relative
@@ -33,19 +47,48 @@ p
 		letter-spacing: 2px
 		margin: 5px 8px
 
-.splash-container
+.underline-animation
+	color: black
+	position: relative
+	color: #000
+	text-decoration: none
+.underline-animation:hover 
+	color: #5e5e5e
+
+.underline-animation:before
+	content: ""
+	position: absolute
 	width: 100%
-    height: 100%
+	height: 2px
+	bottom: -2px
+	left: 0px
+	background-color: #000
+	visibility: hidden
+	-webkit-transform: scaleX(0)
+	transform: scaleX(0)
+	-webkit-transition: all 0.3s ease-in-out 0s
+	transition: all 0.3s ease-in-out 0s
+
+
+.underline-animation:hover:before 
+	visibility: visible
+	-webkit-transform: scaleX(1)
+	transform: scaleX(1)
+
+
+.splash-container
 	// background: #5e5e5e  
 	// text-transform: uppercase
 	text-align: center
 	position: relative
+	height: 100%
 	// background: url(../assets/carlos_de_la_garza.jpg)
 	// background-size: cover
 
+
 .splash-header-box
 	position: relative
-	width: 100%
+	height: 100%
 	// padding: 0 25px
 	text-align: center
 	// border: 15px solid rgba(255, 255, 255, 1)
@@ -53,9 +96,9 @@ p
 		position: relative
 		padding: 16px 0
 		top: 10px
-		letter-spacing: 5px
+		letter-spacing: 20px
 		font-weight: 400
-		transition: text-shadow 2s
+		transition: transform 1s ease-out
 		// text-shadow: 2px 1px 1px #3AAFB9
 		// text-shadow: 1px 1px 1px #1d1e1d
 		// text-transform: capitalize
@@ -66,15 +109,41 @@ p
 		text-align: right
 		// text-shadow: 1px 1px 1px #3ab984
 		// text-shadow: 1px 1px 1px #1d1e1d
+.splash-header-top
+	transform: translateY(0)
+.splash-header-center
+	transform: translateY(350%)
 
 .splash-photo
 	background: url(../assets/carlos_de_la_garza.jpg)
 	margin: 0 auto
-	background-size: cover
+	background-size: contain
+	background-position: center
 	background-repeat: no-repeat
-	width: 900px
-	height: 600px
+	// width: 100%
+	max-height: 750px
+	height: 100vh
+	// max-height: 700px
+	transition: transform 1s
     border-radius: 10px    
+.splash-photo-op
+	transition: opacity 1s
+
+.splash-photo-y1
+	transform: translateY(0)
+.splash-photo-y0
+	transform: translateY(150%)
+.op1
+	opacity: 1
+.op0
+	opacity: 0
+
+.nav
+	transition: opacity 2s	
+.splash-nav1
+	opacity: 1
+.splash-nav0
+	opacity: 0
 
 .splash-fullname
 	width: 100%
@@ -111,20 +180,35 @@ p
 		// float: left
 		// width: 100%
 		// height: 350px
-		h4
+		div
+			text-align: left
+		h1
 			font-weight: 400
-		p.bold
-			font-weight: 300
+			position: relative
 		p
 			font-weight: 100
 			font-size: 18px
+			color: grey
+			letter-spacing: 0.5px
+		p.bold
+			color: black
+			font-weight: 400
+			font-size: 20px
 
-
+.credit-showcase-container
+	text-align: center
+	h1
+		font-weight: 400
+.credit-by-year
+	// display: flex
+	// display: -webkit-inline-flex
+	// display: -ms-inline-flex
+	// flex-direction: column
+	// justify-content: space-between
+	position: relative
 
 .card
-	width: 450px
-	height: 180px
-	text-align: left
+	text-align: center
 	background: white
 	margin: 25px 10px
 	border-radius: 5px
@@ -136,25 +220,94 @@ p
 	box-shadow: 0px  20px 30px 3px rgba(0, 0, 0, 0.55)
 
 
-.card-0
-	left: 0px
+// .card-0
+// 	left: 0px
 
-.card-1
-	left: 400px
+// .card-1
+// 	left: 400px
 
-.card-2
-	left: 800px
+// .card-2
+// 	left: 800px
 
 .card-album-cover
-	float: left
+	margin: 10px
 	position: relative
-	background: black
-	width: 180px
-	height: 180px
+	margin: 0 auto
+	background-image: url(../assets/m83_junk.jpg)
+	background-size: contain
+	background-position: center
+	background-repeat: no-repeat
+	width: 250px
+	height: 250px
 
 .card-album-credits 
-	float: left
+	background: #ccc
+	// float: left
+	font-weight: 200
+	width: 250px
+	height: 150px
+	display: inline-flex
+	display: -webkit-inline-flex
+	display: -ms-inline-flex
+	flex-direction: column
 	position: relative
-	span
-		display: 
+	transform: translate(-50%,-50%)
+	left: 50%
+	top: 50%
 
+
+.contact-container
+	text-align: center
+	max-height: 500px
+	min-height: 500px
+	position: relative
+	h2
+		position: absolute
+		transform: translate(-50%,-50%)
+		left: 50%
+		top: 50%
+
+
+// flip animation on project card
+.flip-container {
+	perspective: 1000px;
+	display: inline-block
+	margin: 10px 20px
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.8s;
+	transform-style: preserve-3d;
+	position: relative
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	width: 250px
+	height: 250px
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateY(180deg)
+}
