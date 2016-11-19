@@ -29,7 +29,6 @@ export default class Home extends Component {
 
   render() {
     return ( <div>
-              <div className='overlay' style={{transform: this.state.overlayCss}}></div>
               <Splash />
               <About />
               <CreditShowcase />
@@ -38,3 +37,4 @@ export default class Home extends Component {
     );
   }
 }
+              // <div className='overlay' style={{transform: this.state.overlayCss}}></div>
