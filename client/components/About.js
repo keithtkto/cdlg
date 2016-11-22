@@ -10,8 +10,8 @@ export default class About extends Component {
               <div className='about-text'>
                 <SparkScroll.h1
                   timeline={{
-                    topBottom: { opacity: 0, top: 20 },
-                    centerCenter: { opacity: 1, top: 0 }
+                    topBottom: { opacity: 0.5, transform: 'translateY(50px)' },
+                    centerCenter: { opacity: 1, transform: 'translateY(0)' }
                   }}
                 >About</SparkScroll.h1>
                 <div>
@@ -35,7 +35,7 @@ export default class About extends Component {
                       His first proper studio job as an assistant at Capitol Recording Studios in 2003 enabled him to work alongside some truly legendary artists, producers and engineers, and set him upon the path to go solo in mid-2005. 
                     
                     </p>
-                    <p style={{fontWeight: 200, color: 'black'}}>To this day he has been known to still play “Am I Evil”, note-for-note.</p>
+                    <p style={{fontWeight: 200, color: 'black', letterSpacing: 1}}>To this day he has been known to still play “Am I Evil”, note-for-note.</p>
                   </div>
                 </div>
               </div>

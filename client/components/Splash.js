@@ -10,7 +10,11 @@ export default class Splash extends Component {
     this.state = {
       boxBorder: 1,
       lastScrollTop: 0,
-      splashHeaderCss: false
+      splashHeaderCss: false,
+      posO: false,
+      overlayCss: 'translateY(0)',
+      op: 0,
+      posY: 500
     }
   }
 
@@ -21,6 +25,19 @@ export default class Splash extends Component {
       console.log('splash header')
       this.setState({splashHeaderCss: true})
     }, 1500)
+
+    setTimeout(() => {
+      this.setState({ posO: true })
+      this.setState({ op: 1 })
+      setTimeout(() => {
+        setTimeout(() => {
+          this.setState({ overlayCss: 'translateY(-100%)',posY: 0, textOpacity: 0 })
+          setTimeout(() => {
+            this.setState({ hide: 'none', posY: 0 })
+          }, 500)
+        }, 1000)
+      }, 1000)
+    }, 500)
 }
 
   componentWillUnmount(){
@@ -59,17 +76,41 @@ export default class Splash extends Component {
 
   render() {
 
-    console.log('this.state.splashHeaderCss', this.state.splashHeaderCss)
     return ( <div className='splash-container container'>
-              <div className='splash-header-box'>
-                <h1 id='carlos' className={this.state.splashHeaderCss? 'splash-header-top' :  'splash-header-center'}>- Carlos de la Garza -</h1>
+              <div className='overlay' style={{ transform: this.state.overlayCss }}></div>
+              <div className={'name-animation ' + (this.state.posO && 'pos-0')} style={{ display: this.state.hide, opacity: this.state.textOpacity }}>
+                <span className='opacity-animation' style={{ opacity: this.state.op }}>- </span>
+                <span className='spacing'> </span>
+                <span className='pos-up'>C</span>
+                <span className='pos-up'>a</span>
+                <span className='pos-up'>r</span>
+                <span className='pos-up'>l</span>
+                <span className='pos-up'>o</span>
+                <span className='pos-up'>s </span>
+                <span className='spacing'> </span>
+                <span className='pos-down'>d</span>
+                <span className='pos-down'>e </span>
+                <span className='spacing'> </span>
+                <span className='pos-up'>l</span>
+                <span className='pos-up'>a </span>
+                <span className='spacing'> </span>
+                <span className='pos-down'>G</span>
+                <span className='pos-down'>a</span>
+                <span className='pos-down'>r</span>
+                <span className='pos-down'>z</span>
+                <span className='pos-down'>a</span>
+                <span className='spacing'> </span>
+                <span className='opacity-animation' style={{ opacity: this.state.op, letterSpacing: 0 }}> -</span>
+              </div>
+              
+              <div className='splash-header-box' style={{transform: 'translateY('+this.state.posY+'%)'}}>
+                <h1 id='carlos' className={'splash-header-top'}>- Carlos de la Garza -</h1>
                   <div className={'nav '+(this.state.splashHeaderCss? 'op1':'op0' )}>
                     <Nav /> 
                   </div>
-                  <div className={'splash-photo-op '+(this.state.splashHeaderCss? 'op1':'op0') }>
-                    <div className={'splash-photo twelve columns '+(this.state.splashHeaderCss? 'splash-header-top splash-photo-y1' :  'splash-header-center splash-photo-y0')} 
-                        style={{margin: '0 auto 40px'}}></div>
-                  </div>
+                    <div className={'splash-photo twelve columns splash-header-top'} 
+                        style={{margin: '0 auto 40px'}}>
+                    </div>
               </div>
             </div>       
     );

@@ -32,7 +32,7 @@ p
 	background: #191919
 	z-index: 10
 	// transition: translateY(0)
-	transition: transform 0.8s
+	transition: transform 1s
 
 .container
 	height: 100%	
@@ -91,6 +91,7 @@ p
 	height: 100%
 	// padding: 0 25px
 	text-align: center
+	transition: transform 1.5s
 	// border: 15px solid rgba(255, 255, 255, 1)
 	h1
 		position: relative
@@ -118,13 +119,13 @@ p
 	background: url(../assets/carlos_de_la_garza.jpg)
 	margin: 0 auto
 	background-size: contain
-	background-position: center
+	background-position: center top
 	background-repeat: no-repeat
 	// width: 100%
-	max-height: 750px
+	max-height: 700px
 	height: 100vh
 	// max-height: 700px
-	transition: transform 1s
+	transition: transform 1.5s
     border-radius: 10px    
 
 .splash-photo-op
@@ -133,7 +134,7 @@ p
 .splash-photo-y1
 	transform: translateY(0)
 .splash-photo-y0
-	transform: translateY(150%)
+	transform: translateY(100%)
 .op1
 	opacity: 1
 .op0
@@ -169,20 +170,47 @@ p
 
 .name-animation 
 	transform: translate(-50%, -50%)
-	position: absolute
-	letter-spacing: 25px
+	position: fixed
+	letter-spacing: 21px
 	font-size: 50px
 	font-weight: 400
 	left: 50%
 	top: 50%
-	width: 960px
+	width: 830px
 	z-index: 10
 	color: white
+	overflow: hidden
+	opacity: 1
+	transition: opacity 1.0s
+// .names 
+// 	transform: translate(-50%, -50%)
+// 	position: absolute
+// 	letter-spacing: 25px
+// 	font-size: 50px
+// 	font-weight: 400
+// 	left: 50%
+// 	top: 70%
+// 	width: 960px
+// 	z-index: 10
+// 	color: white
+
 
 .name-animation span
+	transition: transform 1s ease-out
 	display: inline-block
+.opacity-animation
+	transition: opacity 0.5s ease-in !important
 
+.pos-up
+	transform: translateY(-80px)
+.pos-down
+	transform: translateY(80px)
 
+.pos-0 span
+	transform: translateY(0px)
+
+.spacing 
+	width: 30px
 
 .about-container
 	// height: 350px
@@ -202,13 +230,15 @@ p
 		h1
 			font-weight: 400
 			position: relative
+			overflow: hidden
 		p
 			font-weight: 100
 			font-size: 18px
 			color: grey
-			letter-spacing: 0.5px
+			letter-spacing: 1.5px
 		p.bold
 			color: black
+			letter-spacing: 1.0px
 			font-weight: 400
 			font-size: 20px
 
@@ -250,7 +280,7 @@ p
 	margin: 10px
 	position: relative
 	margin: 0 auto
-	background-image: url(../assets/m83_junk.jpg)
+	// background-image: url(../assets/albums/m83_junk.jpg)
 	background-size: contain
 	background-position: center
 	background-repeat: no-repeat

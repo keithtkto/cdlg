@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 
+import m83_junk from '../assets/albums/m83_junk.jpg'
+
 export default class CreditCard extends Component {
 
   render() {
     const credit = this.props.credit
+
 			return (<div className='flip-container'>
 								<div className='flipper'>
-									<div className='front card-album-cover'>
+									<div className='front card-album-cover' style={{backgroundImage: 'url('+m83_junk+')' }}>
 									</div>
 									<div className='back' style={{background: '#ccc'}}>
 										<div className='card-album-credits'>
