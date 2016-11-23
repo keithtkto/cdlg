@@ -9,13 +9,15 @@ export const credits = [
         album: 'Apocalipstick',
         label: 'Secretly Canadian',
         year: 2017,
-        role: 'Producer, Engineer, Mixer'
+        role: 'Producer, Engineer, Mixer',
+        cover: 'cherryglazerr_apocalipstick.jpg'
     },
     {  band: 'Jimmy Eat World',
         album: 'forthcoming LP',
         label: 'RCA',
         year: 2017,
-        role: 'Engineer'
+        role: 'Engineer',
+        cover: 'jimmyeatworld_integrityblues.jpg'
     },
     {  band: 'The Naked and Famous',
         album: 'Simple Forms',
