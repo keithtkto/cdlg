@@ -232,15 +232,19 @@ p
 			position: relative
 			overflow: hidden
 		p
+			position: relative
 			font-weight: 100
 			font-size: 18px
 			color: grey
 			letter-spacing: 1.5px
+			span
+				display: inline-block
 		p.bold
 			color: black
 			letter-spacing: 1.0px
 			font-weight: 400
 			font-size: 20px
+		
 
 .credit-showcase-container
 	text-align: center
@@ -266,6 +270,10 @@ p
 .card:hover 
 	box-shadow: 0px  20px 30px 3px rgba(0, 0, 0, 0.55)
 
+.card-container
+	display: inline-flex
+	align-items: center
+	justify-content: space-between
 
 // .card-0
 // 	left: 0px
@@ -279,7 +287,6 @@ p
 .card-album-cover
 	margin: 10px
 	position: relative
-	margin: 0 auto
 	// background-image: url(../assets/albums/m83_junk.jpg)
 	background-size: contain
 	background-position: center
@@ -298,16 +305,20 @@ p
 	display: -ms-inline-flex
 	flex-direction: column
 	position: relative
-	transform: translate(-50%,-50%)
-	left: 50%
-	top: 50%
+	// transform: translate(-50%,-50%)
+	// left: 50%
+	// top: 50%
+
 
 
 .contact-container
 	text-align: center
-	max-height: 500px
+	max-height: 1000px
+	height: 100vh
 	min-height: 500px
 	position: relative
+	h1
+		margin: 25% auto
 	h2
 		position: absolute
 		transform: translate(-50%,-50%)

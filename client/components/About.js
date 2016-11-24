@@ -8,12 +8,9 @@ export default class About extends Component {
   render() {
     return ( <div className='about-container container' style={{width: '80%',padding: '50px 0',margin: '0 auto'}}>
               <div className='about-text'>
-                <SparkScroll.h1
-                  timeline={{
-                    topBottom: { opacity: 0.5, transform: 'translateY(50px)' },
-                    centerCenter: { opacity: 1, transform: 'translateY(0)' }
-                  }}
-                >About</SparkScroll.h1>
+                <h1>
+                  About
+                </h1>
                 <div>
                   <p className='bold'>
                     Carlos de la Garza is a Producer, Engineer, Mixer, and Songwriter, based in Los Angeles.

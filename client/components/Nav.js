@@ -15,7 +15,7 @@ export default class App extends Component {
                 </li>
                 <li>&middot;</li>
                 <li>
-                  <a href="" className='underline-animation'>Work</a>
+                  <a href="" className='underline-animation'>Discography</a>
                 </li>
                 <li>&middot;</li>
                 <li>

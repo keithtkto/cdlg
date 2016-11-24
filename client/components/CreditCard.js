@@ -5,20 +5,16 @@ export default class CreditCard extends Component {
 
   render() {
     const credit = this.props.credit
-			return (<div className='flip-container'>
-								<div className='flipper'>
-									<div className={'front card-album-cover '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')}>
-										{credit.cover ? '' : <span style={{position: 'absolute'}}>Forthcoming Album</span>}
-									</div>
-									<div className='back' style={{background: '#ccc'}}>
-										<div className='card-album-credits'>
-											<span style={{fontSize: 21}}>{credit.band}</span> 
-											<span style={{fontSize: 17}}>{credit.album}</span> 
-											<span style={{fontWeight: 200, flexGrow: 2}}>{credit.label}</span> 
-											<span style={{fontSize: 21}}>{credit.role}</span> 
-										</div>
-									</div>
+			return (<div className='card-container' style={{ 'flexDirection': this.props.order % 2 !== 1 ? 'row' : 'row-reverse'}}>
+								<div className={'card-album-cover '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')}>
+									{credit.cover ? '' : <span style={{position: 'absolute'}}>Forthcoming Album</span>}
 								</div>
+									<div className='card-album-credits'>
+										<span style={{fontSize: 21}}>{credit.band}</span> 
+										<span style={{fontSize: 17}}>{credit.album}</span> 
+										<span style={{fontWeight: 200, flexGrow: 2}}>{credit.label}</span> 
+										<span style={{fontSize: 21}}>{credit.role}</span> 
+									</div>
 							</div>)
   }
 }

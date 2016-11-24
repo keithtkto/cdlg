@@ -23,13 +23,13 @@ export default class CreditShowcase extends Component {
     const sortedCredits = this.sortCredits()
     const years = Object.keys(sortedCredits).reverse()
     return ( <div className='container credit-showcase-container' style={{position: 'relative'}}>
-                <h1>Work</h1>
+                <h1>Discography</h1>
                 <div style={{width: '100%'}}>
                   {years.map((y, i)=>{
                     return (<div key={i}>
                       <h3>{y}</h3>
                       <div className='credit-by-year'>
-                        {sortedCredits[y].map((c, j)=> <CreditCard key={j} order={j} credit={c} />)}
+                        {sortedCredits[y].map((c, j)=> <CreditCard key={j} order={j + i} credit={c} />)}
                       </div>
                     </div>)
                   })}
