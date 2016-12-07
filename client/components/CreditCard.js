@@ -1,24 +1,51 @@
 import React, { Component } from 'react'
+import CreditModal from './CreditModal'
 
-
+var {SparkScroll, SparkProxy, sparkScrollFactory} =
+  require('react-spark-scroll-gsap')({
+    invalidateAutomatically: true
+  });
 export default class CreditCard extends Component {
+	constructor(){
+		super()
+		this.state = {
+
+		}
+	}
+
+	openCreditModal(credit){
+		this.setState({modalCredit: credit})
+	}
+
+	closeCreditModal(){
+		this.setState({modalCredit: null})
+	}
 
   render() {
+		const orientation = this.props.order % 2 !== 1
     const credit = this.props.credit
-			return (<div className='card-container' style={{ 'flexDirection': this.props.order % 2 !== 1 ? 'row' : 'row-reverse'}}>
-								<div className={'card-album-cover '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')}>
-									{credit.cover ? '' : <span style={{position: 'absolute'}}>Forthcoming Album</span>}
+			return (<div className='card-container' style={{ 'flexDirection': orientation ? 'row' : 'row-reverse'}}>	
+								{this.state.modalCredit && <CreditModal credit={this.state.modalCredit} closeCreditModal={this.closeCreditModal.bind(this)}/>}
+								<div className={'card-album-cover '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')} onClick={this.openCreditModal.bind(this, credit)}>
+									{credit.cover ? '' : <span className='u-tt5050' style={{letterSpacing: 2}}>Forthcoming Album</span>}
 								</div>
-									<div className='card-album-credits'>
-										<span style={{fontSize: 21}}>{credit.band}</span> 
-										<span style={{fontSize: 17}}>{credit.album}</span> 
-										<span style={{fontWeight: 200, flexGrow: 2}}>{credit.label}</span> 
-										<span style={{fontSize: 21}}>{credit.role}</span> 
-									</div>
 							</div>)
   }
 }
 
+								// <SparkScroll.div 
+								// 	className={'card-album-cover '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')}
+								// 	timeline={{
+								// 	topCenter: {left: orientation? '0px': '0px'},
+								// 	bottomBottom: {left: orientation? '250px': '-250px'}
+								// }}>
+								// </SparkScroll.div>
+								// 	<div className='card-album-credits'>
+								// 		<span style={{fontSize: 21}}>{credit.band}</span> 
+								// 		<span style={{fontSize: 17}}>{credit.album}</span> 
+								// 		<span style={{fontWeight: 200, flexGrow: 2}}>{credit.label}</span> 
+								// 		<span style={{fontSize: 21}}>{credit.role}</span> 
+								// 	</div>
 
 
 

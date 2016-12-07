@@ -1,5 +1,5 @@
 body
-	background: white
+	background: #191919
 	color: black  
 	// font-family: 'Open Sans', sans-serif
 	// font-family: 'Josefin Sans', sans-serif;
@@ -194,20 +194,21 @@ p
 // 	z-index: 10
 // 	color: white
 
-
+.name-animation
+	line-height: 1
 .name-animation span
-	transition: transform 1s ease-out
+	transition: transform 0.5s
 	display: inline-block
 .opacity-animation
 	transition: opacity 0.5s ease-in !important
 
 .pos-up
 	transform: translateY(-80px)
-.pos-down
-	transform: translateY(80px)
 
-.pos-0 span
+.pos-0
 	transform: translateY(0px)
+.pos-exit
+	transform: translateY(-50px)
 
 .spacing 
 	width: 30px
@@ -293,9 +294,14 @@ p
 	background-repeat: no-repeat
 	width: 250px
 	height: 250px
+	z-index: 1
 
+.no-cover
+	background-color: white
+	border: 1px solid black
+	
 .card-album-credits 
-	background: #ccc
+	background: white
 	// float: left
 	font-weight: 200
 	width: 250px
@@ -309,8 +315,33 @@ p
 	// left: 50%
 	// top: 50%
 
-
-
+.modal
+	background: rgba(25,25,25,0.6)
+	position: fixed
+	height: 100%
+	width: 100%
+	left: 0
+	top: 0
+	z-index: 150
+.modal-content
+	display: flex
+	position: absolute
+	transform: translate(-50%, -50%)
+	left: 50%
+	top: 50%
+.album-cover-in-modal
+	width: 400px
+	height: 400px
+.album-credit-in-modal
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	margin: 10px 20px
+	padding: 20px 40px
+	background: white
+	border-radius: 10px
+	border: 2px solid black
 .contact-container
 	text-align: center
 	max-height: 1000px
