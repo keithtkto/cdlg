@@ -252,12 +252,14 @@ p
 	h1
 		font-weight: 400
 .credit-by-year
-	// display: flex
-	// display: -webkit-inline-flex
-	// display: -ms-inline-flex
-	// flex-direction: column
-	// justify-content: space-between
+	display: flex
+	display: -webkit-inline-flex
+	display: -ms-inline-flex
+	flex-direction: row
+	justify-content: flex-start
 	position: relative
+	flex-wrap: wrap
+	max-width: 975px
 
 .card
 	text-align: center
@@ -286,14 +288,14 @@ p
 // 	left: 800px
 
 .card-album-cover
-	margin: 10px
+	margin: 28px 26px 28px 0
 	position: relative
 	// background-image: url(../assets/albums/m83_junk.jpg)
 	background-size: contain
 	background-position: center
 	background-repeat: no-repeat
-	width: 250px
-	height: 250px
+	width: 293px
+	height: 293px
 	z-index: 1
 
 .no-cover
@@ -337,6 +339,7 @@ p
 	flex-direction: column
 	justify-content: center
 	align-items: center
+	width: 400px
 	margin: 10px 20px
 	padding: 20px 40px
 	background: white

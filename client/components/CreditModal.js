@@ -8,7 +8,8 @@ export default class CreditModal extends Component {
     return ( <div className='modal'>
               <div onClick={this.props.closeCreditModal}>x</div>
               <div className='modal-content'>
-
+                <h1 onClick={this.props.toPreviousCredit}>{'<'}</h1>
+                <h1 onClick={this.props.ToNextCredit}>{'>'}</h1>
 								<div className={'card-album-cover album-cover-in-modal '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')}>
 									{credit.cover ? '' : <span className='u-tt5050' style={{letterSpacing: 2}}>Forthcoming Album</span>}
 								</div>   

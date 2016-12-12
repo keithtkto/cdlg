@@ -1,32 +1,15 @@
 import React, { Component } from 'react'
-import CreditModal from './CreditModal'
 
 var {SparkScroll, SparkProxy, sparkScrollFactory} =
   require('react-spark-scroll-gsap')({
     invalidateAutomatically: true
   });
 export default class CreditCard extends Component {
-	constructor(){
-		super()
-		this.state = {
-
-		}
-	}
-
-	openCreditModal(credit){
-		this.setState({modalCredit: credit})
-	}
-
-	closeCreditModal(){
-		this.setState({modalCredit: null})
-	}
-
   render() {
 		const orientation = this.props.order % 2 !== 1
     const credit = this.props.credit
-			return (<div className='card-container' style={{ 'flexDirection': orientation ? 'row' : 'row-reverse'}}>	
-								{this.state.modalCredit && <CreditModal credit={this.state.modalCredit} closeCreditModal={this.closeCreditModal.bind(this)}/>}
-								<div className={'card-album-cover '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')} onClick={this.openCreditModal.bind(this, credit)}>
+			return (<div className='card-container'>	
+								<div className={'card-album-cover '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')} onClick={this.props.openCreditModal.bind(this, this.props.keys)}>
 									{credit.cover ? '' : <span className='u-tt5050' style={{letterSpacing: 2}}>Forthcoming Album</span>}
 								</div>
 							</div>)
