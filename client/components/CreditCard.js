@@ -8,9 +8,9 @@ export default class CreditCard extends Component {
   render() {
 		const orientation = this.props.order % 2 !== 1
     const credit = this.props.credit
-			return (<div className='card-container'>	
+			return (<div className='card-container u-p'>	
 								<div className={'card-album-cover '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')} onClick={this.props.openCreditModal.bind(this, this.props.keys)}>
-									{credit.cover ? '' : <span className='u-tt5050' style={{letterSpacing: 2}}>Forthcoming Album</span>}
+									{credit.cover ? '' : <span className='u-tt5050' style={{letterSpacing: 2}}>{credit.band} Forthcoming Album</span>}
 								</div>
 							</div>)
   }

@@ -249,8 +249,7 @@ p
 
 .credit-showcase-container
 	text-align: center
-	h1
-		font-weight: 400
+
 .credit-by-year
 	display: flex
 	display: -webkit-inline-flex
@@ -299,8 +298,10 @@ p
 	z-index: 1
 
 .no-cover
+	width: 291px
+	height: 291px
 	background-color: white
-	border: 1px solid black
+	border: 2px solid black
 	
 .card-album-credits 
 	background: white
@@ -318,7 +319,8 @@ p
 	// top: 50%
 
 .modal
-	background: rgba(25,25,25,0.6)
+	// background: rgba(255,255,255,0.6)
+	background: rgba(0,0,0,.25)
 	position: fixed
 	height: 100%
 	width: 100%
@@ -332,19 +334,57 @@ p
 	left: 50%
 	top: 50%
 .album-cover-in-modal
-	width: 400px
-	height: 400px
+	width: 500px
+	height: 500px
 .album-credit-in-modal
+	padding: 0 50px
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+	align-items: flex-start
+	width: 300px
+	height: 498px
+	background: white
+	border-right: 1px solid rgb(170,170,170)
+	border-bottom: 1px solid rgb(170,170,170)
+	border-top: 1px solid rgb(170,170,170)
+.album-credit-in-modal-top
+	text-align: left
 	display: flex
 	flex-direction: column
 	justify-content: center
-	align-items: center
-	width: 400px
-	margin: 10px 20px
-	padding: 20px 40px
-	background: white
-	border-radius: 10px
+	align-items: flex-start
+.modal-credit-large
+	font-size: 26px
+	font-weight: 400
+.modal-credit-normal
+	font-weight: 300
+	font-size: 20px
+
+.no-cover-in-modal
+	width: 498px
+	height: 498px
+	background-color: white
 	border: 2px solid black
+
+
+.checkmark {
+	position: fixed;
+    right: 10px;
+    top: 0px;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	display: block;
+	stroke-width: 2;
+	stroke: black;
+	stroke-miterlimit: 10;
+	box-shadow: inset 0px 0px 0px #7ac142;
+	animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+
+
 .contact-container
 	text-align: center
 	max-height: 1000px

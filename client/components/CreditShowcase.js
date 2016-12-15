@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import ReactDOM from 'react-dom'
 import CreditCard from './CreditCard'
 import CreditModal from './CreditModal'
 
@@ -67,10 +67,12 @@ export default class CreditShowcase extends Component {
   
 	openCreditModal(creditIdx){
 		this.setState({creditIdx: creditIdx})
+    document.body.style.overflow = 'hidden'
 	}
 
 	closeCreditModal(){
 		this.setState({creditIdx: null})
+    document.body.style.overflow = ''
 	}
 
   toPreviousCredit(){
@@ -88,7 +90,7 @@ export default class CreditShowcase extends Component {
     const years = Object.keys(sortedCredits).reverse()
 
     return ( <div className='container credit-showcase-container' style={{position: 'relative'}}>
-                {!!this.state.creditIdx && <CreditModal credit={credits[this.state.creditIdx]} 
+                {this.state.creditIdx !== null && <CreditModal credit={credits[this.state.creditIdx]} 
                                                         closeCreditModal={this.closeCreditModal.bind(this)}
                                                         toPreviousCredit={this.toPreviousCredit.bind(this)}
                                                         ToNextCredit={this.ToNextCredit.bind(this)}/>}
