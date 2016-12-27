@@ -1,18 +1,53 @@
 import React, { Component } from 'react'
 
-var {SparkScroll, SparkProxy, sparkScrollFactory} =
+const {SparkScroll, SparkProxy, sparkScrollFactory} =
   require('react-spark-scroll-gsap')({
     invalidateAutomatically: true
   });
 export default class CreditCard extends Component {
+	constructor(){
+		super()
+		this.state = {
+			hover: false
+		}
+	}
+
+
+	mouseOver(){
+		this.setState({hover: true})
+	}
+
+	mouseOut(){
+		this.setState({hover: false})
+	}
+
+
   render() {
 		const orientation = this.props.order % 2 !== 1
     const credit = this.props.credit
-			return (<div className='card-container u-p'>	
-								<div className={'card-album-cover '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover')} onClick={this.props.openCreditModal.bind(this, this.props.keys)}>
+			return (<SparkScroll.div
+                timeline={{
+                  topBottom: { opacity: 0.25 },
+                  topCenter: { opacity: 1 }
+                }} className='card-container'>	
+								<div className={'card-album-cover u-p'+ (this.state.hover ? ' zoom-in ': ' ') + (credit.cover? credit.cover.split('.')[0]: 'no-cover')} 
+									onClick={this.props.openCreditModal.bind(this, this.props.keys)}
+									>
 									{credit.cover ? '' : <span className='u-tt5050' style={{letterSpacing: 2}}>{credit.band} Forthcoming Album</span>}
 								</div>
-							</div>)
+								{(credit.cover) &&  <div className='card-album-cover-hover u-p' 
+																					onMouseOut={this.mouseOut.bind(this)}
+																					onMouseOver={this.mouseOver.bind(this)}
+																					onClick={this.props.openCreditModal.bind(this, this.props.keys)} >
+																							<div className='cover-credit-center'>
+																								<div className='album-credit-in-modal-top'>
+																									<span className='modal-credit-large' style={{color: 'white'}}>{credit.band}</span>
+																									<span className='modal-credit-large' style={{color: 'white'}}>{credit.album}</span> 
+																								</div>
+																									<span className='modal-credit-large' style={{right: 20, bottom: 20, position: 'absolute', textAlign: 'right',fontWeight: 300, color: 'white'}}>{credit.role}</span> 
+																							</div>
+																					</div>}
+							</SparkScroll.div>)
   }
 }
 

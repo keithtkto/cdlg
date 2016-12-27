@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Scrollchor from 'react-scrollchor'
 
 
 export default class App extends Component {
@@ -7,19 +8,27 @@ export default class App extends Component {
               <ul>
                 <li>&middot;</li>
                 <li>
-                  <a href="" className='underline-animation'>Home</a>
+                  <Scrollchor to="home" animate={{duration: 600}} className="underline-animation">
+                    Home
+                  </Scrollchor>
                 </li>
                 <li>&middot;</li>
                 <li>
-                  <a href="" className='underline-animation'>About</a>
+                  <Scrollchor to="about" animate={{duration: 600}} className="underline-animation">
+                    About
+                  </Scrollchor>
                 </li>
                 <li>&middot;</li>
                 <li>
-                  <a href="" className='underline-animation'>Discography</a>
+                  <Scrollchor to="discography" animate={{duration: 600}} className="underline-animation">
+                    Discography
+                  </Scrollchor>
                 </li>
                 <li>&middot;</li>
                 <li>
-                  <a href="" className='underline-animation'>Contact</a>
+                  <Scrollchor to="contact" animate={{duration: 600}} className="underline-animation">
+                    Contact
+                  </Scrollchor>
                 </li>
                 <li>&middot;</li>
               </ul>

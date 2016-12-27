@@ -27,7 +27,7 @@ export const credits = [
         cover: 'tnaf_simpleforms.jpeg'
     },
     {  band: 'Ziggy Marley',
-        album: 'S/T',
+        album: 'Self-Titled',
         label: 'Tough Gong Worldwide',
         year: 2016,
         role: 'Mixer, Engineer',

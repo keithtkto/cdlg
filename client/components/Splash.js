@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Motion, spring} from 'react-motion';
 import Nav from './Nav'
 
 
@@ -39,7 +38,7 @@ export default class Splash extends Component {
       document.body.style.background = 'white'
         setTimeout(()=>{
           this.setState({exit: true})
-          this.setState({ overlayCss: 'translateY(-100%)',posY: 0, textOpacity: 0 })
+          this.setState({ overlayCss: 'translateY(-120%)',posY: 0, textOpacity: 0 })
 
           setTimeout(()=>{
             this.setState({ hide: 'none' })
@@ -113,7 +112,7 @@ export default class Splash extends Component {
                 <span className='opacity-animation' style={{opacity: this.state.op, letterSpacing: 0}}> -</span>
               </div>
               
-              <div className='splash-header-box' style={{transform: 'translateY('+this.state.posY+'%)'}}>
+              <div className='splash-header-box' id='home' style={{transform: 'translateY('+this.state.posY+'%)'}}>
                 <h1 id='carlos' className={'splash-header-top'}>- Carlos de la Garza -</h1>
                   <div className={'nav '+(this.state.splashHeaderCss? 'op1':'op0' )}>
                     <Nav /> 

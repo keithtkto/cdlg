@@ -5,6 +5,10 @@ import CreditModal from './CreditModal'
 
 import {credits} from '../helpers/credits'
 
+const {SparkScroll, SparkProxy, sparkScrollFactory} =
+  require('react-spark-scroll-gsap')({
+    invalidateAutomatically: true
+  });
 
 
 export default class CreditShowcase extends Component {
@@ -88,13 +92,22 @@ export default class CreditShowcase extends Component {
   render() {
     const sortedCredits = this.sortCredits()
     const years = Object.keys(sortedCredits).reverse()
-
-    return ( <div className='container credit-showcase-container' style={{position: 'relative'}}>
-                {this.state.creditIdx !== null && <CreditModal credit={credits[this.state.creditIdx]} 
+SparkScroll.div 
+    return ( <div className='container credit-showcase-container' id='discography' style={{position: 'relative'}}>
+                {this.state.creditIdx !== null && <CreditModal 
+                                                        creditsLength={credits.length}
+                                                        idx={this.state.creditIdx}
+                                                        credit={credits[this.state.creditIdx]} 
                                                         closeCreditModal={this.closeCreditModal.bind(this)}
                                                         toPreviousCredit={this.toPreviousCredit.bind(this)}
                                                         ToNextCredit={this.ToNextCredit.bind(this)}/>}
-                <h1>Discography</h1>
+                <SparkScroll.div
+                timeline={{
+                  topBottom: { opacity: 0 },
+                  centerCenter: { opacity: 1 }
+                }}>
+                  <h1>Discography</h1>
+                </SparkScroll.div>
                 <div style={{width: '100%'}}>          
                   <div className='credit-by-year'>
                     {credits.map((c,i)=> <CreditCard key={i} order={i} credit={c} openCreditModal={this.openCreditModal.bind(this, i)} />)}

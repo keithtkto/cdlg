@@ -10,7 +10,7 @@ export default class CreditModal extends Component {
                 <path className="checkmark__check u-p" fill="white" d="M16 16 36 36 M36 16 16 36" />
               </svg>
               <div className='modal-content'>
-                <div className='arrows' onClick={this.props.toPreviousCredit}>{'<'}</div>
+               <div className='arrows' style={{opacity: this.props.idx === 0 ? 0 : 1}} onClick={this.props.toPreviousCredit}>{'<'}</div>
 								<div className={'card-album-cover album-cover-in-modal '+ (credit.cover? credit.cover.split('.')[0]: 'no-cover-in-modal')} style={{margin: 0}}>
 									{credit.cover ? '' : <span className='u-tt5050' style={{letterSpacing: 2, fontSize: 24}}>Forthcoming Album</span>}
 								</div>   
@@ -23,7 +23,7 @@ export default class CreditModal extends Component {
                   </div>
                   <span className='modal-credit-large' style={{alignSelf: 'flex-end', textAlign: 'right', fontWeight: 300}}>{credit.role}</span> 
                 </div>      
-                <div className='arrows' onClick={this.props.ToNextCredit}>{'>'}</div>
+                <div className='arrows' style={{opacity: this.props.idx === this.props.creditsLength - 1 ? 0 : 1}} onClick={this.props.ToNextCredit}>{'>'}</div>
               </div>      
             </div>       
     );

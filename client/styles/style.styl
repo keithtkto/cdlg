@@ -223,21 +223,26 @@ p
 	// position: absolute
 	.about-text
 		text-align: center
+		height: 100vh
 		// float: left
 		// width: 100%
 		// height: 350px
 		div
 			text-align: left
 		h1
-			font-weight: 400
+			text-align: center
+			font-weight: 200
 			position: relative
 			overflow: hidden
 		p
 			position: relative
-			font-weight: 100
+			font-weight: 200
 			font-size: 18px
 			color: grey
 			letter-spacing: 1.5px
+			transition: transform 0.6s cubic-bezier(.77,0,.175,1)
+			transition: -webkit-transform 0.4s cubic-bezier(.77,0,.175,1)
+
 			span
 				display: inline-block
 		p.bold
@@ -255,10 +260,15 @@ p
 	display: -webkit-inline-flex
 	display: -ms-inline-flex
 	flex-direction: row
-	justify-content: flex-start
+	justify-content: center
 	position: relative
 	flex-wrap: wrap
 	max-width: 975px
+
+.credit-by-year:after 
+	content: ""
+	flex: 0 1 auto
+	width: 319px
 
 .card
 	text-align: center
@@ -276,6 +286,7 @@ p
 	display: inline-flex
 	align-items: center
 	justify-content: space-between
+	position: relative
 
 // .card-0
 // 	left: 0px
@@ -296,6 +307,30 @@ p
 	width: 293px
 	height: 293px
 	z-index: 1
+	transition: background-image 0.2s
+
+.zoom-in 
+	background-size: 105%
+
+.card-album-cover-hover
+	opacity: 0
+	margin: 28px 26px 28px 0
+	left: 0
+	top: 0
+	z-index: 2
+	position: absolute
+	background: rgba(0,0,0,0.4)
+	width: 293px
+	height: 293px
+	transition: opacity 0.2s
+
+.card-album-cover-hover:hover
+	opacity: 1
+
+.cover-credit-center
+	width: 253px
+	height: 253px
+	margin: 20px
 
 .no-cover
 	width: 291px
@@ -377,7 +412,7 @@ p
 	border-radius: 50%;
 	display: block;
 	stroke-width: 2;
-	stroke: black;
+	stroke: white;
 	stroke-miterlimit: 10;
 	box-shadow: inset 0px 0px 0px #7ac142;
 	animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
