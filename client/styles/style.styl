@@ -1,9 +1,8 @@
 body
 	background: #191919
-	color: black  
-	// font-family: 'Open Sans', sans-serif
-	// font-family: 'Josefin Sans', sans-serif;
-	font-family: 'Oswald', sans-serif;
+	color: #191919  
+	font-family: 'Open Sans', sans-serif
+	font-family: 'Quicksand',"Helvetica Neue",Helvetica,Arial, sans-serif;
 
 ul
 	list-style: none
@@ -48,7 +47,7 @@ p
 		margin: 5px 8px
 
 .underline-animation
-	color: black
+	color: #191919
 	position: relative
 	color: #000
 	text-decoration: none
@@ -59,10 +58,10 @@ p
 	content: ""
 	position: absolute
 	width: 100%
-	height: 2px
-	bottom: -2px
+	height: 1px
+	bottom: -3px
 	left: 0px
-	background-color: #000
+	background-color: #191919
 	visibility: hidden
 	-webkit-transform: scaleX(0)
 	transform: scaleX(0)
@@ -82,6 +81,7 @@ p
 	text-align: center
 	position: relative
 	height: 100%
+	margin-bottom: 10%
 	// background: url(../assets/carlos_de_la_garza.jpg)
 	// background-size: cover
 
@@ -108,8 +108,7 @@ p
 		position: relative
 		margin: 0
 		text-align: right
-		// text-shadow: 1px 1px 1px #3ab984
-		// text-shadow: 1px 1px 1px #1d1e1d
+
 .splash-header-top
 	transform: translateY(0)
 .splash-header-center
@@ -122,9 +121,8 @@ p
 	background-position: center top
 	background-repeat: no-repeat
 	// width: 100%
-	max-height: 700px
-	height: 100vh
-	// max-height: 700px
+	height: 0
+	padding-top: 66.72%
 	transition: transform 1.5s
     border-radius: 10px    
 
@@ -214,6 +212,9 @@ p
 	width: 30px
 
 .about-container
+	width: 80%
+	padding: 50px 0
+	margin-bottom: 25% 
 	// height: 350px
 	// max-width: 900px
 	// width: 100%
@@ -223,7 +224,6 @@ p
 	// position: absolute
 	.about-text
 		text-align: center
-		height: 100vh
 		// float: left
 		// width: 100%
 		// height: 350px
@@ -246,7 +246,7 @@ p
 			span
 				display: inline-block
 		p.bold
-			color: black
+			color: #191919
 			letter-spacing: 1.0px
 			font-weight: 400
 			font-size: 20px
@@ -254,16 +254,18 @@ p
 
 .credit-showcase-container
 	text-align: center
+	margin-bottom: 25%
 
 .credit-by-year
 	display: flex
 	display: -webkit-inline-flex
 	display: -ms-inline-flex
 	flex-direction: row
-	justify-content: center
+	justify-content: flex-start
 	position: relative
 	flex-wrap: wrap
-	max-width: 975px
+	max-width: 1000px
+	width: 100%
 
 .credit-by-year:after 
 	content: ""
@@ -298,23 +300,23 @@ p
 // 	left: 800px
 
 .card-album-cover
-	margin: 28px 26px 28px 0
+	margin: 26px 13px
 	position: relative
 	// background-image: url(../assets/albums/m83_junk.jpg)
 	background-size: contain
 	background-position: center
 	background-repeat: no-repeat
-	width: 293px
-	height: 293px
 	z-index: 1
 	transition: background-image 0.2s
+	width: 293px
+	height: 293px
 
 .zoom-in 
 	background-size: 105%
 
 .card-album-cover-hover
 	opacity: 0
-	margin: 28px 26px 28px 0
+	margin: 26px 13px
 	left: 0
 	top: 0
 	z-index: 2
@@ -371,6 +373,14 @@ p
 .album-cover-in-modal
 	width: 500px
 	height: 500px
+	margin: 26px 13px
+	position: relative
+	// background-image: url(../assets/albums/m83_junk.jpg)
+	background-size: contain
+	background-position: center
+	background-repeat: no-repeat
+	z-index: 1
+	transition: background-image 0.2s
 .album-credit-in-modal
 	padding: 0 50px
 	display: flex
@@ -383,6 +393,9 @@ p
 	border-right: 1px solid rgb(170,170,170)
 	border-bottom: 1px solid rgb(170,170,170)
 	border-top: 1px solid rgb(170,170,170)
+	line-height: 1.4
+.album-credit-in-modal-roles
+	padding-top: 80px
 .album-credit-in-modal-top
 	text-align: left
 	display: flex
@@ -405,8 +418,8 @@ p
 
 .checkmark {
 	position: fixed;
-    right: 10px;
-    top: 0px;
+    right: 37px;
+    top: -40px;
 	width: 56px;
 	height: 56px;
 	border-radius: 50%;
@@ -423,16 +436,12 @@ p
 .contact-container
 	text-align: center
 	max-height: 1000px
-	height: 100vh
+	height: 100%
 	min-height: 500px
 	position: relative
-	h1
-		margin: 25% auto
-	h2
-		position: absolute
-		transform: translate(-50%,-50%)
-		left: 50%
-		top: 50%
+	h5
+		margin: 40% auto
+
 
 
 // flip animation on project card

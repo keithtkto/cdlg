@@ -13,7 +13,8 @@ export default class Splash extends Component {
       posO: false,
       overlayCss: 'translateY(0)',
       op: 0,
-      posY: 500
+      posY: 500,
+      hideNav: window.innerWidth < 500
     }
   }
 
@@ -113,10 +114,10 @@ export default class Splash extends Component {
               </div>
               
               <div className='splash-header-box' id='home' style={{transform: 'translateY('+this.state.posY+'%)'}}>
-                <h1 id='carlos' className={'splash-header-top'}>- Carlos de la Garza -</h1>
-                  <div className={'nav '+(this.state.splashHeaderCss? 'op1':'op0' )}>
+                <h1 id='carlos' className='splash-header-top'>Carlos de la Garza</h1>
+                  {this.state.hideNav || <div className={'nav '+(this.state.splashHeaderCss? 'op1':'op0' )}>
                     <Nav /> 
-                  </div>
+                  </div>}
                     <div className={'splash-photo twelve columns splash-header-top'} 
                         style={{margin: '0 auto 40px'}}>
                     </div>

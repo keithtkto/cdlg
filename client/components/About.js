@@ -1,36 +1,22 @@
 import React, { Component } from 'react'
-const {SparkScroll, SparkProxy, sparkScrollFactory} =
-  require('react-spark-scroll-gsap')({
-    invalidateAutomatically: true
-  });
+import Underline from './Underline'
 
 export default class About extends Component {
   render() {
-    return ( <div className='about-container container' id='about' style={{width: '80%',padding: '50px 0',margin: '0 auto'}}>
+    return ( <div className='about-container container' id='about'>
               <div className='about-text'>
-              <SparkScroll.div
-                timeline={{
-                  topBottom: { opacity: 0 },
-                  centerCenter: { opacity: 1 }
-                }}>
+              <div>
                   <h1>
                     About
                   </h1>
-                </SparkScroll.div>
-                <SparkScroll.div 
-                  timeline={{
-                    topBottom: { opacity: 0 },
-                    centerCenter: { opacity: 1 }
-                  }}>
+                </div>
+                <Underline/>
+                <div>
                   <p className='bold'>
                     Carlos de la Garza is a Producer, Engineer, Mixer, and Songwriter, based in Los Angeles.
                   </p>  
-                </SparkScroll.div>
-                <SparkScroll.div 
-                  timeline={{
-                    topBottom: { opacity: 0 },
-                    centerCenter: { opacity: 1 }
-                  }}>
+                </div>
+                <div>
                   <div className='six columns'>
                     <p>
                       Hailing from the hard-knock streets of Cerritos, CA, Carlos spent his formative years immersed in skateboard and punk culture before receiving his first drum set in 10th grade. 
@@ -48,7 +34,7 @@ export default class About extends Component {
                     </p>
                     <p style={{fontWeight: 200, color: 'black', letterSpacing: 1}}>To this day he has been known to still play “Am I Evil”, note-for-note.</p>
                   </div>
-                </SparkScroll.div>
+                </div>
               </div>
             </div>      
     );

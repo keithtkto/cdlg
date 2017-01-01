@@ -58,9 +58,11 @@
 .hamburger-wrapper
     display: block
     position: fixed
+    background: white
     top: 5px
-    right: 10px
-    padding: 10px 0
+    right: 15px
+    margin: 10px 0
+    padding: 5px 5px 0
     cursor: pointer
     z-index: 11
 
@@ -90,5 +92,18 @@
     padding: 12px 0
     margin: 0
     
+.title-underline:after
+    content: ''
+    display: block
+    background: #1D1D1F
+    width: 0px
+    height: 2px
+    -webkit-transition: .4s cubic-bezier(.175,.885,.32,1.275).8s
+    transition: .4s cubic-bezier(.175,.885,.32,1.275).8s
+    margin: 50px auto
+
+.title-underline-long:after
+    width: 80px
+
 
 

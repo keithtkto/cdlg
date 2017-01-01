@@ -1,0 +1,79 @@
+@media screen and (min-width: 1070px) and (max-width: 1200px) { 
+    .card-album-cover, .album-cover-in-modal {
+        width: 400px !important; 
+        height: 400px !important;
+    }
+
+    .album-credit-in-modal {
+        height: 400px !important;
+    }
+
+}
+@media screen and (max-width: 1070px) { 
+    .credit-by-year {
+        justify-content: center !important;
+    }
+
+    .album-cover-in-modal {
+        width: 300px !important;
+        height: 300px !important;
+    }
+
+    .album-credit-in-modal {
+        height: 300px !important;
+        width: 225px !important;
+    }
+
+}
+@media screen and (max-width: 799px) { 
+    .card-album-cover {
+        width: 50% !important;
+        min-width: 50vh !important;
+        max-width: 50% !important;
+        /*width: 50% !important; */
+        height: 50% !important;
+        min-height: 50vh !important; 
+    }
+
+    .credit-by-year:after {
+        width: 57vh;
+    }
+
+    .album-cover-in-modal {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .album-credit-in-modal {
+        height: 200px !important;
+        width: 125px !important;
+    }
+
+    .album-credit-in-modal-roles {
+        line-height: 1.1 !important;
+        padding-top: 0 !important;
+    }
+
+    .album-credit-in-modal-top {
+        line-height: 1.3;
+    }
+    .modal-credit-large {
+        font-size: 18px !important;
+    }
+    .modal-credit-normal {
+        font-size: 14px !important;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px)and (-webkit-min-device-pixel-ratio: 2)and (orientation: portrait) {
+      .splash-header-box h1 {
+          font-size: 5rem;
+      }
+
+      p {
+          text-align: center;
+      }
+
+}
+
+

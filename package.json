@@ -33,6 +33,7 @@
     "react-motion": "^0.4.4",
     "react-router": "^2.7.0",
     "react-scrollchor": "^2.2.0",
-    "react-spark-scroll-gsap": "^2.0.2"
+    "react-spark-scroll-gsap": "^2.0.2",
+    "react-waypoint": "^4.1.0"
   }
 }

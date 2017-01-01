@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import Splash from '../components/Splash'
 import Nav from '../components/Nav'
 import About from '../components/About'
-import CreditShowcase from '../components/CreditShowcase'
+import Discography from '../components/Discography'
 import Contact from '../components/Contact'
 
 export default class Home extends Component {
@@ -25,10 +25,8 @@ export default class Home extends Component {
     console.log(hamburger)
     document.addEventListener('scroll', ()=>{
       if (window.scrollY < 180) {
-        console.log('hide')
         this.setState({burgerHide:true})
       } else {
-        console.log('show')
         this.setState({burgerHide:false})
       }
     })
@@ -42,10 +40,14 @@ export default class Home extends Component {
       this.setState({navIsDown:false})
   }
 
+  navUpHandlerToogle(){
+      this.setState({navIsDown:!this.state.navIsDown})
+  }
+
 
   render() {
     return ( <div>
-  <div onMouseEnter={this.navDownHandler.bind(this)} className={'hamburger-wrapper'}>
+  <div onMouseEnter={this.navDownHandler.bind(this)} onClick={this.navUpHandlerToogle.bind(this)} className={'hamburger-wrapper'}>
                 <div className={'hamburger '+ (this.state.burgerHide ? 'burger-hide' : '')}></div>
               </div>
               <div onMouseLeave={this.navUpHandler.bind(this)} className={'collapse-nav nav-'+ (this.state.navIsDown ? 'down': 'up')}>
@@ -55,7 +57,7 @@ export default class Home extends Component {
               </div>
               <Splash />
               <About />
-              <CreditShowcase />
+              <Discography />
               <Contact />
             </div>       
     );

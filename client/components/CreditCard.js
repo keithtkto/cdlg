@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 
-const {SparkScroll, SparkProxy, sparkScrollFactory} =
-  require('react-spark-scroll-gsap')({
-    invalidateAutomatically: true
-  });
 export default class CreditCard extends Component {
 	constructor(){
 		super()
@@ -25,11 +21,7 @@ export default class CreditCard extends Component {
   render() {
 		const orientation = this.props.order % 2 !== 1
     const credit = this.props.credit
-			return (<SparkScroll.div
-                timeline={{
-                  topBottom: { opacity: 0.25 },
-                  topCenter: { opacity: 1 }
-                }} className='card-container'>	
+			return (<div className='card-container'>	
 								<div className={'card-album-cover u-p'+ (this.state.hover ? ' zoom-in ': ' ') + (credit.cover? credit.cover.split('.')[0]: 'no-cover')} 
 									onClick={this.props.openCreditModal.bind(this, this.props.keys)}
 									>
@@ -47,7 +39,7 @@ export default class CreditCard extends Component {
 																									<span className='modal-credit-large' style={{right: 20, bottom: 20, position: 'absolute', textAlign: 'right',fontWeight: 300, color: 'white'}}>{credit.role}</span> 
 																							</div>
 																					</div>}
-							</SparkScroll.div>)
+							</div>)
   }
 }
 
