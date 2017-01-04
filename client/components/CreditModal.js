@@ -16,10 +16,10 @@ export default class CreditModal extends Component {
                     <path className="checkmark__check u-p" fill="white" d="M16 16 36 36 M36 16 16 36" />
                   </svg>
                   <div className='album-credit-in-modal-top'>
-                    <span className='modal-credit-large'>{credit.band}</span> 
-                    <span className='modal-credit-large'>{credit.album}</span> 
-                    <span className='modal-credit-normal'>{credit.label}</span> 
-                    <span className='modal-credit-normal'>{credit.year}</span> 
+                    <span className='modal-credit-large u-2ndary-font' style={{fontWeight: 500}}>{credit.band}</span> 
+                    <span className='modal-credit-large u-2ndary-font' style={{fontWeight: 300}}>{credit.album}</span> 
+                    <span className='modal-credit-normal u-2ndary-font'>{credit.label}</span> 
+                    <span className='modal-credit-normal u-2ndary-font'>{credit.year}</span> 
                   </div>
                   <span className='modal-credit-large album-credit-in-modal-roles' style={{alignSelf: 'flex-end', textAlign: 'right', fontWeight: 300}}>{credit.role}</span> 
                 </div>      

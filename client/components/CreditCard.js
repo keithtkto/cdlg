@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-
+import MobileDetect from 'mobile-detect'
 export default class CreditCard extends Component {
 	constructor(){
 		super()
+		const md = new MobileDetect(window.navigator.userAgent);
 		this.state = {
-			hover: false
+			hover: false,
+			isMobile: md.mobile(),
 		}
 	}
 
@@ -19,24 +21,30 @@ export default class CreditCard extends Component {
 
 
   render() {
+
 		const orientation = this.props.order % 2 !== 1
     const credit = this.props.credit
 			return (<div className='card-container'>	
 								<div className={'card-album-cover u-p'+ (this.state.hover ? ' zoom-in ': ' ') + (credit.cover? credit.cover.split('.')[0]: 'no-cover')} 
-									onClick={this.props.openCreditModal.bind(this, this.props.keys)}
+									onClick={this.state.isMobile ? ()=>{} : this.props.openCreditModal.bind(this, this.props.keys)}
 									>
 									{credit.cover ? '' : <span className='u-tt5050' style={{letterSpacing: 2}}>{credit.band} Forthcoming Album</span>}
 								</div>
-								{(credit.cover) &&  <div className='card-album-cover-hover u-p' 
+									{this.state.isMobile ?   
+						<div className='album-credit-in-modal-top'>
+							<span className='modal-credit-large u-2ndary-font' style={{ color: 'black' }}>{credit.band}</span>
+							<span className='modal-credit-large u-2ndary-font' style={{ color: 'black', fontWeight: 100 }}>{credit.album}</span>
+						</div> : ''}
+								{(credit.cover ) &&  <div className={'card-album-cover-hover u-p '+(this.state.isMobile && 'display-none')} 
 																					onMouseOut={this.mouseOut.bind(this)}
 																					onMouseOver={this.mouseOver.bind(this)}
 																					onClick={this.props.openCreditModal.bind(this, this.props.keys)} >
 																							<div className='cover-credit-center'>
 																								<div className='album-credit-in-modal-top'>
-																									<span className='modal-credit-large' style={{color: 'white'}}>{credit.band}</span>
-																									<span className='modal-credit-large' style={{color: 'white'}}>{credit.album}</span> 
+																									<span className='modal-credit-large u-2ndary-font' style={{color: 'white'}}>{credit.band}</span>
+																									<span className='modal-credit-large u-2ndary-font' style={{color: 'white', fontWeight: 100}}>{credit.album}</span> 
 																								</div>
-																									<span className='modal-credit-large' style={{right: 20, bottom: 20, position: 'absolute', textAlign: 'right',fontWeight: 300, color: 'white'}}>{credit.role}</span> 
+																									<span className='modal-credit-large u-2ndary-font album-credit-in-modal-btm'>{credit.role}</span> 
 																							</div>
 																					</div>}
 							</div>)
